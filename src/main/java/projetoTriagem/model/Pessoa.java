@@ -3,22 +3,11 @@ package projetoTriagem.model;
 
 public class Pessoa {
 	private String nome;
-	private int age;
+	private int idade;
 	private String dataNascimento;
 	private String cpf;
 	private String nSus;
 	
-	Pessoa() {
-		
-	}
-	
-	Pessoa(String nome, int age, String dataNascimento, String cpf, String nSus) {
-		this.nome = nome;
-		this.age = age;
-		this.dataNascimento = dataNascimento;
-		this.cpf = cpf;
-		this.nSus = nSus;
-	}
 	
 	public String getNome() {
 		return nome;
@@ -28,12 +17,12 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public int getAge() {
-		return this.age;
+	public int getIdade() {
+		return this.idade;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 	
 	public String getDataNascimento() {
@@ -43,8 +32,15 @@ public class Pessoa {
 	public String getCpf() {
 		return cpf;
 	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	
 	public String getNSus() {
-		return nSus;
+		return this.nSus;
+	}
+
+	public void setNSus(String nSus) {
+		this.nSus = nSus;
 	}
 }
