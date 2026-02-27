@@ -1,16 +1,6 @@
-# Compiled class files
-*.class
-
-# IntelliJ / VS Code
-.idea/
+/target/
+.settings/
+.classpath
+.project
 .vscode/
-
-# Build folders
-out/
-target/
-
-# Logs
-*.log
-
-# OS
-.DS_Store
+*.iml
