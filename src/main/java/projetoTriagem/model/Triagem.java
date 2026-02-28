@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Triagem {
     private LocalDateTime dataHora;
-    private int sinaisVitais;
+    private boolean sinaisVitais;
     private int prioridade;
     private List<String> sintoma;
     private double temperatura;
@@ -16,7 +16,7 @@ public class Triagem {
 
     private Pessoa pessoa;
 
-    public Triagem(Pessoa pessoa, LocalDateTime dataHora, int sinaisVitais, int prioridade, List<String> sintoma,
+    public Triagem(Pessoa pessoa, LocalDateTime dataHora, boolean sinaisVitais, int prioridade, List<String> sintoma,
             double temperatua, int nivelDeDor) {
         this.id = ++contador;
         this.pessoa = pessoa;
@@ -36,11 +36,11 @@ public class Triagem {
         return this.dataHora;
     }
 
-    public int getSinaisVitais() {
+    public boolean isSinaisVitais() {
         return this.sisVitais;
     }
 
-    public void setSinaisVitais(int sinaisVitais) {
+    public void setSinaisVitais(boolean sinaisVitais) {
         this.sinaisVitais = sinaisVitais;
     }
 
