@@ -48,6 +48,7 @@ public class PessoaService {
 
         public List<Pessoa> listarPacientes() {
         return bancoPacientes;
+        
         }
     }
 

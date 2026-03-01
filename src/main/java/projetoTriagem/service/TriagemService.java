@@ -152,7 +152,7 @@ public class TriagemService {
         System.out.println("        FICHA DE TRIAGEM");
         System.out.println("====================================");
         System.out.println("ID: " + triagem.getId());
-        System.out.println("Nome: " + triagem.getPessoa());
+        System.out.println("Nome: " + triagem.getPaciente());
         System.out.println("Temperatura: " + triagem.getTemperatura() + " °C");
         System.out.println("Nível de Dor: " + triagem.getNivelDeDor());
         System.out.println("Sintomas: " + String.join(", ", triagem.getSintomas()));

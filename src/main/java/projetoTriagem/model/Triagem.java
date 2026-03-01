@@ -4,22 +4,21 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Triagem {
-    private LocalDateTime dataHora;
+    private final LocalDateTime dataHora;
     private boolean sinaisVitais;
     private int prioridade;
     private List<String> sintoma;
     private double temperatura;
     private int nivelDeDor;
-    private Long id;
+    private final Long id;
 
     private static Long contador = 0L;
 
-    private Pessoa pessoa;
+    private final Pessoa paciente;
 
-    public Triagem(Pessoa pessoa, LocalDateTime dataHora, boolean sinaisVitais, int prioridade, List<String> sintoma,
-            double temperatua, int nivelDeDor) {
+    public Triagem(Pessoa paciente, LocalDateTime dataHora, boolean sinaisVitais, int prioridade, List<String> sintoma, double temperatura, int nivelDeDor) {
         this.id = ++contador;
-        this.pessoa = pessoa;
+        this.paciente = paciente;
         this.dataHora = dataHora;
         this.sinaisVitais = sinaisVitais;
         this.prioridade = prioridade;
@@ -37,7 +36,7 @@ public class Triagem {
     }
 
     public boolean isSinaisVitais() {
-        return this.sisVitais;
+        return this.sinaisVitais;
     }
 
     public void setSinaisVitais(boolean sinaisVitais) {
@@ -53,11 +52,11 @@ public class Triagem {
     }
 
     public List<String> getSintomas() {
-        return this.sintomas;
+        return this.sintoma;
     }
 
-    public void setSintomas(List<String> sintomas) {
-        this.sintomas = sintomas;
+    public void setSintomas(List<String> sintoma) {
+        this.sintoma = sintoma;
     }
 
     public double getTemperatura() {
@@ -76,8 +75,8 @@ public class Triagem {
         this.nivelDeDor = nivelDeDor;
     }
 
-    public Pessoa getPessoa() {
-        return this.pessoa;
+    public Pessoa getPaciente() {
+        return this.paciente;
     }
 
     @Override
@@ -93,7 +92,7 @@ public class Triagem {
                 Sintomas: %s
                 Pessoa: %s
                 ====================
-                """.formatted(id, dataHora, sinaisVitais, prioridade, temperatura, nivelDeDor, sintomas, pessoa);
+                """.formatted(id, dataHora, sinaisVitais, prioridade, temperatura, nivelDeDor, sintoma, paciente);
     }
 
 }
