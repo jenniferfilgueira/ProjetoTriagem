@@ -14,9 +14,9 @@ public class Triagem {
 
     private static Long contador = 0L;
 
-    private final Pessoa paciente;
+    private final Paciente paciente;
 
-    public Triagem(Pessoa paciente, LocalDateTime dataHora, boolean sinaisVitais, int prioridade, List<String> sintoma, double temperatura, int nivelDeDor) {
+    public Triagem(Paciente paciente, LocalDateTime dataHora, boolean sinaisVitais, int prioridade, List<String> sintoma, double temperatura, int nivelDeDor) {
         this.id = ++contador;
         this.paciente = paciente;
         this.dataHora = dataHora;
@@ -55,7 +55,7 @@ public class Triagem {
         return this.sintoma;
     }
 
-    public void setSintomas(List<String> sintoma) {
+    public void setSintoma(List<String> sintoma) {
         this.sintoma = sintoma;
     }
 
@@ -75,7 +75,7 @@ public class Triagem {
         this.nivelDeDor = nivelDeDor;
     }
 
-    public Pessoa getPaciente() {
+    public Paciente getPaciente() {
         return this.paciente;
     }
 
