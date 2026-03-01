@@ -5,13 +5,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import projetoTriagem.model.Pessoa;
+import projetoTriagem.model.Paciente;
 
 @Service
-public class PessoaService {
-    private final List<Pessoa> bancoPacientes = new ArrayList<>();
+public class PacienteService {
+    private final List<Paciente> bancoPacientes = new ArrayList<>();
 
-    public void registroPaciente(Pessoa paciente) {
+    public void registroPaciente(Paciente paciente) {
         if (paciente.getNome() == null || paciente.getNome().trim().isEmpty()) {
             throw new IllegalArgumentException("O nome completo do paciente é obrigatório! ");
         }
@@ -46,7 +46,7 @@ public class PessoaService {
         System.out.println("Nome Completo: " + paciente.getNome() + "\n" + "CPF: " + paciente.getCpf() + "\n" + "Idade: " + paciente.getIdade() + "\n" + "Data de nascimento: " + paciente.getDataNascimento() + "\n" + "Número do cartão do Sus: " + paciente.getNSus());
         }
 
-        public List<Pessoa> listarPacientes() {
+        public List<Paciente> listarPacientes() {
         return bancoPacientes;
         
         }

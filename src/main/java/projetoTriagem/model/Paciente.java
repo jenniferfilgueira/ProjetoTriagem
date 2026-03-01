@@ -1,7 +1,7 @@
 package projetoTriagem.model;
 
 
-public class Pessoa {
+public class Paciente {
 	private String nome;
 	private int idade;
 	private String dataNascimento;

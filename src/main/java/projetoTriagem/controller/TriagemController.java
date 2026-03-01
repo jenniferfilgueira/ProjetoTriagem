@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import projetoTriagem.model.Pessoa;
-import projetoTriagem.service.PessoaService;
+import projetoTriagem.model.Paciente;
+import projetoTriagem.service.PacienteService;
 import projetoTriagem.service.TriagemService;
 
 
@@ -14,7 +14,7 @@ import projetoTriagem.service.TriagemService;
 public class TriagemController {
 
     @Autowired
-    private PessoaService pacienteService;
+    private PacienteService pacienteService;
 
     @Autowired 
     private TriagemService triagemService;
@@ -24,7 +24,7 @@ public class TriagemController {
 
 // O RedirectAttributes serve para enviar mensagens temporárias para a tela HTML
     @PostMapping("/salvarPaciente")
-    public String receberDadosHtml(Pessoa paciente, RedirectAttributes attributes) {
+    public String receberDadosHtml(Paciente paciente, RedirectAttributes attributes) {
 
         return "redirect:/cadastro";
     }
