@@ -2,7 +2,7 @@ package projetoTriagem.service;
 
 import java.util.List;
 import java.util.Set;
-import projetoTriagem.model.Pessoa;
+
 import projetoTriagem.model.Triagem;
 
 public class TriagemService {
@@ -135,13 +135,13 @@ public class TriagemService {
                 if (prioridade < 1) prioridade = 1;
             }
         }
-        switch (prioridade){
-            case 4: return "VERMELHO";
-            case 3: return "LARANJA";
-            case 2: return "AMARELO";
-            case 1: return "VERDE";
-            default: return "Não classificado";
-        }
+        return switch (prioridade) {
+            case 4 -> "VERMELHO";
+            case 3 -> "LARANJA";
+            case 2 -> "AMARELO";
+            case 1 -> "VERDE";
+            default -> "Não classificado";
+        };
     }
     
 //ficha tecnica da triagem;
