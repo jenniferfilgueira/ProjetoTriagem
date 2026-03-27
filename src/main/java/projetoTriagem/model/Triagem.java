@@ -16,6 +16,8 @@ public class Triagem {
 
     private final Paciente paciente;
 
+    
+
     public Triagem(Paciente paciente, LocalDateTime dataHora, boolean sinaisVitais, int prioridade, List<String> sintoma, double temperatura, int nivelDeDor) {
         this.id = ++contador;
         this.paciente = paciente;
