@@ -14,5 +14,4 @@ public abstract class ProfissionalSaude extends Pessoa{
     public void setRegistroConselho(String registroConselho) {
         this.registroConselho = registroConselho;
     }
-    
 }
