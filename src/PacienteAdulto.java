@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 public class PacienteAdulto extends Paciente {
     
     public PacienteAdulto(String nome, String cpf, int dataNascimento, String registroConselho){
@@ -17,4 +18,8 @@ public class PacienteAdulto extends Paciente {
 //testeGitHub
 //teste
 //testeagain
+=======
+public class PacienteAdulto {
+    
+>>>>>>> a525f76a083ace9ce54a0c1302eee927dc9c1e8e
 }
