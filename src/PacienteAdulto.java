@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 public class PacienteAdulto extends Paciente {
     
-    public PacienteAdulto(String nome, String cpf, int dataNascimento, String registroConselho){
-        super(nome, cpf, dataNascimento, registroConselho);
+    public PacienteAdulto(String nome, String cpf, int dataNascimento){
+        super(nome, cpf, dataNascimento);
     }
 
     @Override
@@ -15,11 +14,4 @@ public class PacienteAdulto extends Paciente {
             return 0;
         }
     }
-//testeGitHub
-//teste
-//testeagain
-=======
-public class PacienteAdulto {
-    
->>>>>>> a525f76a083ace9ce54a0c1302eee927dc9c1e8e
 }
