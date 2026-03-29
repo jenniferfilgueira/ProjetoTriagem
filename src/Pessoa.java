@@ -33,6 +33,5 @@ public abstract class Pessoa {
     public void setDataNascimento(int dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-//teste
 
 }
