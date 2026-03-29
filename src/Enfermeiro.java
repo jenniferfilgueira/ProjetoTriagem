@@ -3,8 +3,8 @@ public class Enfermeiro extends ProfissionalSaude {
         super(nome, cpf, dataNascimento, registroConselho);  
     }
 
-    public void assinarFicha() {
-        
+    public String assinarFicha() {
+        return "Assinado digitalmente pelo Enf." + this.getNome() + "(COREN: " + this.getRegistroConselho() + ")";
     }
 }
 
