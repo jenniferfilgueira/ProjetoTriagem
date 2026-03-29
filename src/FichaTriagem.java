@@ -59,13 +59,13 @@ public class FichaTriagem {
             System.out.println("- " + s.getDescricao() + " (Gravidade: " + s.getPesoGravidade() + ")");
         }
 
-        System.out.println("---------------------------------");
-        System.out.println("DADOS DO ENFERMEIRO RESPONSAVEL");
-        System.out.println("NOME: " + enfermeiro.getNome());
-        System.out.println("COREN: " + enfermeiro.getRegistroConselho());
-        System.out.println("---------------------------------");
+        System.out.print("----------------------------------");
 
+        if (this.enfermeiro != null) {
+            this.enfermeiro.assinarFicha();
+        } else {
+            System.out.print("Erro: nao ha nenhum enfermeiro responsavel associado a esta ficha");
+        }
     }
-
 }
 
