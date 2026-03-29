@@ -1,11 +1,11 @@
 
 public enum GrauRisco {
 
-    VERMELHO(5),
-    LARANJA(4),
+    VERMELHO(1),
+    LARANJA(2),
     AMARELO(3),
-    VERDE(2),
-    AZUL(1);
+    VERDE(4),
+    AZUL(5);
 
     private final int prioridade;
 
