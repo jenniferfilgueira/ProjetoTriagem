@@ -1,22 +1,15 @@
-import java.util.Scanner;
-
 public class Sintoma {
 
     private String descricao;
     private int pesoGravidade;
 
-    Sintoma() {
+    public Sintoma() {
 
     }
 
-    Sintoma(String descricao, int pesoGravidade) {
+    public Sintoma(String descricao, int pesoGravidade) {
         this.descricao = descricao;
         this.pesoGravidade = pesoGravidade;
-    }
-
-    public void preencher(Scanner sc) {
-        System.out.println("Nos informe os sintomas que esta sentindo: ");
-        descricao = sc.nextLine();
     }
 
     public String getDescricao() {
@@ -28,3 +21,4 @@ public class Sintoma {
     }
 
 }
+
