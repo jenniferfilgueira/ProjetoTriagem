@@ -39,11 +39,33 @@ public class FichaTriagem {
             this.riscoReal = GrauRisco.VERDE;
         } else if (pontuacaoFinal >= 1 && pontuacaoFinal < 3) {
             this.riscoReal = GrauRisco.AZUL;
-        } else {
-            System.out.println("Pontuacao invalida");
         }
-
+        
         return this.riscoReal;
     }
+
+    public void gerarRelatorio(){
+
+        System.out.println("--------- FICHA TRIAGEM ---------");
+        System.out.println("---------------------------------");
+        System.out.println("DADOS DO PACIENTE");
+        System.out.println("NOME: " + paciente.getNome());
+        System.out.println("CPF: " + paciente.getCpf());
+        System.out.println("QUANTIDADE DE SINTOMAS: " + sintomas.size());
+        System.out.println("ÁREA: " + (this.riscoReal != null ? this.riscoReal : "ERRO NO SISTEMA"));
+
+        System.out.println("SINTOMAS RELATADOS: ");
+        for (Sintoma s : sintomas) {
+            System.out.println("- " + s.getDescricao() + " (Gravidade: " + s.getPesoGravidade() + ")");
+        }
+
+        System.out.println("---------------------------------");
+        System.out.println("DADOS DO ENFERMEIRO RESPONSAVEL");
+        System.out.println("NOME: " + enfermeiro.getNome());
+        System.out.println("COREN: " + enfermeiro.getRegistroConselho());
+        System.out.println("---------------------------------");
+
+    }
+
 }
 
