@@ -67,5 +67,21 @@ public class FichaTriagem {
             System.out.print("Erro: nao ha nenhum enfermeiro responsavel associado a esta ficha");
         }
     }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public Enfermeiro getEnfermeiro() {
+        return enfermeiro;
+    }
+
+    public GrauRisco getRiscoReal() {
+        return riscoReal;
+    }
+
+    public List<Sintoma> getSintomas() {
+        return sintomas;
+    }
 }
 
