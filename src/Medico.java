@@ -2,34 +2,28 @@ public class Medico extends ProfissionalSaude {
     public Medico(String nome, String cpf, int dataNascimento, String registroConselho){
         super(nome, cpf, dataNascimento, registroConselho);  
     }
-    public void encaminhamentoEmergencia(FichaTriagem ficha) {
-        System.out.println("ALERTA DE PRIORIDADE - ENCAMINHAMENTO EMERGENCIAL");
-        System.out.println("---------------------------------");
-        System.out.println("Paciente: " + ficha.getPaciente().getNome());
-        System.out.println("Grau de Risco: " + ficha.getRiscoReal());
-        System.out.println("Médico Solicitante: Dr(a)." + this.getNome() +  "CRM: " + this.getRegistroConselho());
-        System.out.println(">> Ação: O paciente foi transferido IMEDIATAMENTE para a ala de urgência.");
-        System.out.println("---------------------------------");
 
-        this.avaliarFicha();
+    public void avaliarFicha(FichaTriagem ficha) {
+        System.out.println("\n---AVALIAÇÃO MÉDICA---");
+        System.out.println("O(a) Dr(a)." + this.getNome() + "(CRM: " + this.getRegistroConselho() + ") está avaliando a ficha de " + ficha.getPaciente().getNome());
+        
     }
 
-    public void encaminhamentoMedico(FichaTriagem ficha) {
-        System.out.println("ENCAMINHAMENTO AMBULATORIAL");
-        System.out.println("---------------------------------");
-        System.out.println("Paciente: " + ficha.getPaciente().getNome());
-        System.out.println("Médico Solicitante: Dr(a)." + this.getNome() +  "CRM: " + this.getRegistroConselho());
-        System.out.println(">> Ação: O paciente foi avaliado. Receituário emitido e paciente recebeu alta.");
-        System.out.println("---------------------------------");
+    public void encaminharPaciente(FichaTriagem ficha) {
+        GrauRisco risco = ficha.getRiscoReal();
 
-        this.avaliarFicha();
-    }  
+        System.out.println("\nDECISÃO DO MÉDICO:");
 
-    public void avaliarFicha() {
-        System.out.println("Assinatura eletrônica do médico responsável:");
-        System.out.println("---------------------------------");
-        System.out.println("Médico(a): " + this.getNome());
-        System.out.println("CRM: " + this.getRegistroConselho());
-        System.out.println("---------------------------------");
+        if(risco == GrauRisco.VERMELHO || risco == GrauRisco.LARANJA) {
+            System.out.println("ALERTA DE ATENDIMENTO - ENCAMINHAMENTO URGENTE PARA A ALA EMERGENCIAL");
+
+            System.out.println("Risco do Paciente: " + risco);
+            System.out.println("Ação executada: O paciente foi transferido com urgência para a ala emergencial.");
+        } else {
+            System.out.println("ENCAMINHAMENTO AMBULATORIAL");
+            System.out.println("Risco do paciente: " + risco);
+            System.out.println("Ação: Paciente avaliado no consultório. Receituário emitido e paciente liberado.");
+        }
+        System.out.print("----------------------");
     }
 }
