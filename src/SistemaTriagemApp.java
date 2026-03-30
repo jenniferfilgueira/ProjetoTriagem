@@ -67,7 +67,7 @@ public class SistemaTriagemApp {
     public void exibirMenuPrincipal() {
         System.out.println("\n");
         System.out.println("=============================================");
-        System.out.println("       HOSPITAL JKJ - SISTEMA DE TRIAGEM     ");
+        System.out.println("           JKJ - SISTEMA DE TRIAGEM          ");
         System.out.println("=============================================");
         System.out.println(" [1] - Cadastrar Enfermeiro");
         System.out.println(" [2] - Cadastrar Médico");
@@ -77,7 +77,7 @@ public class SistemaTriagemApp {
         System.out.println(" [0] - Sair");
         System.out.println("============================================");
     }
-
+    
     public Enfermeiro cadastrarEnfermeiro() {
         System.out.println("\n");
         System.out.println("────────────────────────────────────────────");
