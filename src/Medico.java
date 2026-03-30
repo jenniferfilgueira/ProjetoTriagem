@@ -26,4 +26,5 @@ public class Medico extends ProfissionalSaude {
         }
         System.out.print("----------------------");
     }
+
 }

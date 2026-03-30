@@ -82,5 +82,6 @@ public class FichaTriagem {
     public List<Sintoma> getSintomas() {
         return sintomas;
     }
+    
 }
 

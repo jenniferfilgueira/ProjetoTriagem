@@ -171,4 +171,5 @@ public class SistemaTriagemApp {
         this.medicoAtual.avaliarFicha(ficha);
         this.medicoAtual.encaminharPaciente(ficha);
     }
+    
 }

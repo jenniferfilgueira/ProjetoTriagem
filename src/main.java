@@ -4,4 +4,5 @@ public class main {
 
         hospital.iniciar();
     }
+    
 }
