@@ -23,14 +23,16 @@ public class Medico extends ProfissionalSaude {
         System.out.println("────────────────────────────────────────────");
 
         if(risco == GrauRisco.VERMELHO || risco == GrauRisco.LARANJA) {
-            System.out.println("[!] STATUS: ATENDIMENTO CRÍTICO");
+            System.out.println("[!] STATUS: ATENDIMENTO CRÍTICO ");
+            System.out.println("LIGANDO PARA 199.... ");
             System.out.println("PACIENTE EM RISCO: " + risco);
-            System.out.println("DESTINO:  ALA EMERGENCIAL (Transferência Imediata)");
+            System.out.println("DESTINO:  ALA EMERGENCIAL (Transferência Imediata, via SAMU)");
             System.out.println("OBSERVAÇÃO:  Monitoramento contínuo obrigatório.");
         } else {
             System.out.println("[ ok ] STATUS: ATENDIMENTO AMBULATORIAL");
             System.out.println("PACIENTE EM RISCO: " + risco);
-            System.out.println("DESTINO:  LIBERADO / CONSULTÓRIO");
+            System.out.println("DESTINO:  CASA + REPOUSO E MEDICAÇÃO");
+            System.out.println("EM CASO DE AGRAVANTE, CONSULTAR UM PSF OU UPA MAIS PRÓXIMO");
         }
         System.out.println("────────────────────────────────────────────");
     }
