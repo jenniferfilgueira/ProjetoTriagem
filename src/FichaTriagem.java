@@ -44,21 +44,21 @@ public class FichaTriagem {
     }
 
     public void gerarRelatorio(){
-
-        System.out.println("--------- FICHA TRIAGEM ---------");
-        System.out.println("---------------------------------");
+        System.out.println("\n\n");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("              FICHA TRIAGEM                 ");
+        System.out.println("────────────────────────────────────────────");
         System.out.println("DADOS DO PACIENTE");
         System.out.println("NOME: " + paciente.getNome());
         System.out.println("CPF: " + paciente.getCpf());
         System.out.println("QUANTIDADE DE SINTOMAS: " + sintomas.size());
         System.out.println("ÁREA: " + (this.riscoReal != null ? this.riscoReal : "ERRO NO SISTEMA"));
-
         System.out.println("SINTOMAS RELATADOS: ");
         for (Sintoma s : sintomas) {
             System.out.println("- " + s.getDescricao() + " (Gravidade: " + s.getPesoGravidade() + ")");
         }
 
-        System.out.print("----------------------------------");
+        System.out.println("────────────────────────────────────────────");
 
         if (this.enfermeiro != null) {
             this.enfermeiro.assinarFicha();
