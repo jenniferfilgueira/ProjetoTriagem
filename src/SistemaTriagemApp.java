@@ -22,16 +22,22 @@ public class SistemaTriagemApp {
             switch (opcao) {
                 case 1:
                     this.enfermeiroLogado = cadastrarEnfermeiro();
-                    System.out.println("Enfermeiro " + enfermeiroLogado.getNome() + " pronto para trabalhar!");
+                    System.out.println("\n");
+                    System.out.println("Enfermeiro: " + enfermeiroLogado.getNome() + ", disponível!");
+                    System.out.println("\n");
                     break;
                 case 2:
                     this.medicoAtual = cadastrarMedico();
-                    System.out.println("Médico(a) " + medicoAtual.getNome() + " está de plantão.");
+                    System.out.println("\n");
+                    System.out.println("Médico(a): " + medicoAtual.getNome() + ", está de plantão.");
+                    System.out.println("\n");
                     break;
 
                 case 3:
                     this.pacienteAtual = cadastrarPaciente();
-                    System.out.println("Paciente " + pacienteAtual.getNome() + " aguardando triagem.");
+                    System.out.println("\n");
+                    System.out.println("Paciente: " + pacienteAtual.getNome() + ", aguardando triagem.");
+                    System.out.println("\n");
                     break;
 
                 case 4:
@@ -48,27 +54,35 @@ public class SistemaTriagemApp {
                     realizarAtendimentoMedico();
                     break;
                 case 0:
+                    System.out.println("\n\n");
                     System.out.println("Saindo...");
                     break;
                 default:
+                    System.out.println("\n\n");
                     System.out.println("Opção inválida!");
             }
         }
     }
 
     public void exibirMenuPrincipal() {
-        System.out.println("============== SISTEMA DE TRIAGEM =========");
-        System.out.println("1 - Cadastrar Enfermeiro");
-        System.out.println("2 - Cadastrar Médico");
-        System.out.println("3 - Cadastrar Paciente");
-        System.out.println("4 - Realizar Triagem");
-        System.out.println("5 - Atendimento Médico");
-        System.out.println("0 - Sair");
-        System.out.println("===========================================\n");
+        System.out.println("\n");
+        System.out.println("=============================================");
+        System.out.println("       HOSPITAL JKJ - SISTEMA DE TRIAGEM     ");
+        System.out.println("=============================================");
+        System.out.println(" [1] - Cadastrar Enfermeiro");
+        System.out.println(" [2] - Cadastrar Médico");
+        System.out.println(" [3] - Cadastrar Paciente");
+        System.out.println(" [4] - Realizar Triagem");
+        System.out.println(" [5] - Atendimento Médico");
+        System.out.println(" [0] - Sair");
+        System.out.println("============================================");
     }
 
     public Enfermeiro cadastrarEnfermeiro() {
-        System.out.println("----- CADASTRAR ENFERMEIRO -----");
+        System.out.println("\n");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("           CADASTRAR ENFERMEIRO             ");
+        System.out.println("────────────────────────────────────────────");
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
         System.out.print("CPF: ");
@@ -78,13 +92,16 @@ public class SistemaTriagemApp {
         scanner.nextLine();
         System.out.print("COREM: ");
         String corem = scanner.nextLine();
-        System.out.println("----------------------\n");
+        System.out.println("────────────────────────────────────────────");
 
         return new Enfermeiro(nome, cpf, data, corem);
     }
 
     public Medico cadastrarMedico(){
-        System.out.println("----- CADASTRAR Médico -----");
+        System.out.println("\n");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("              CADASTRAR Médico              ");
+        System.out.println("────────────────────────────────────────────");
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
         System.out.print("CPF: ");
@@ -94,13 +111,16 @@ public class SistemaTriagemApp {
         scanner.nextLine();
         System.out.print("CRM: ");
         String crm = scanner.nextLine();
-        System.out.println("----------------------\n");
+        System.out.println("────────────────────────────────────────────");
 
         return new Medico(nome, cpf, data, crm);
     }
 
     public Paciente cadastrarPaciente() {
-    System.out.println("------ CADASTRO DE PACIENTE -------");
+    System.out.println("\n");
+    System.out.println("────────────────────────────────────────────");
+    System.out.println("             CADASTRO DE PACIENTE           ");
+    System.out.println("────────────────────────────────────────────");
     System.out.print("Nome: ");
     String nome = scanner.nextLine();
     System.out.print("CPF: ");
@@ -122,23 +142,30 @@ public class SistemaTriagemApp {
         novoPaciente = new PacienteAdulto(nome, cpf, ano);
     }
 
+    System.out.println("────────────────────────────────────────────");
+
     return novoPaciente;
 }
 
     public void realizarNovaTriagem(Enfermeiro enfermeiro, Paciente paciente) {
-
-        System.out.println("======== INICIANDO TRIAGEM ========");
-        System.out.println("Olá " + paciente.getNome());
-        System.out.println("Eu sou(a): " + enfermeiro.getNome() + " enfermeiro(a) responsável pela sua triagem");
-        System.out.println("");
+        System.out.println("\n");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("             INICIANDO TRIAGEM              ");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("Olá, " + paciente.getNome() + "!");
+        System.out.println("Eu sou(a): " + enfermeiro.getNome() + ", enfermeiro(a) responsável pela sua triagem.");
 
         FichaTriagem ficha = new FichaTriagem(paciente, enfermeiro);
 
         String continuar = "SIM";
         while (continuar.equalsIgnoreCase("SIM")) {
+            System.out.println("\n");
+
             System.out.print("Por favor. Qual o sintoma que você está sentindo: ");
             String descricao = scanner.nextLine();
-            
+
+            System.out.println("\n");
+
             System.out.print("Peso da gravidade deste sintoma (1 a 5): ");
             int peso = scanner.nextInt();
             scanner.nextLine();
@@ -146,19 +173,21 @@ public class SistemaTriagemApp {
             Sintoma novoSintoma = new Sintoma(descricao, peso);
             ficha.adicionarSintomas(novoSintoma);
 
+            System.out.println("\n");
+
             System.out.print("Deseja adicionar outro sintoma? (SIM/NAO): ");
             continuar = scanner.nextLine();
         }
         
         ficha.processarTriagem();
 
-        System.out.println("-----------------------------------------");
         ficha.gerarRelatorio();
-        System.out.println("-----------------------------------------");
+        System.out.println("\n");
+        
 
         this.filaAtendimento.add(ficha);
         
-        System.out.println("\nTriagem concluída! Paciente enviado para a fila.");
+        System.out.println("Triagem concluída! Paciente enviado para a fila.");
 
     }
     public void realizarAtendimentoMedico() {

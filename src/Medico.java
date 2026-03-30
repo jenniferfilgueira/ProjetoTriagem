@@ -4,27 +4,35 @@ public class Medico extends ProfissionalSaude {
     }
 
     public void avaliarFicha(FichaTriagem ficha) {
-        System.out.println("\n---AVALIAÇÃO MÉDICA---");
-        System.out.println("O(a) Dr(a)." + this.getNome() + "(CRM: " + this.getRegistroConselho() + ") está avaliando a ficha de " + ficha.getPaciente().getNome());
-        
+        System.out.println("\n");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("             AVALIAÇÃO MÉDICA               ");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("Dr(a)." + this.getNome());
+        System.out.println("CRM: " + this.getRegistroConselho());
+        System.out.println("Está avaliando a ficha de: " + ficha.getPaciente().getNome());
+        System.out.println("────────────────────────────────────────────");
     }
 
     public void encaminharPaciente(FichaTriagem ficha) {
         GrauRisco risco = ficha.getRiscoReal();
 
-        System.out.println("\nDECISÃO DO MÉDICO:");
+        System.out.println("\n");
+        System.out.println("────────────────────────────────────────────");
+        System.out.println("              DECISÃO MÉDICA FINAL          ");
+        System.out.println("────────────────────────────────────────────");
 
         if(risco == GrauRisco.VERMELHO || risco == GrauRisco.LARANJA) {
-            System.out.println("ALERTA DE ATENDIMENTO - ENCAMINHAMENTO URGENTE PARA A ALA EMERGENCIAL");
-
-            System.out.println("Risco do Paciente: " + risco);
-            System.out.println("Ação executada: O paciente foi transferido com urgência para a ala emergencial.");
+            System.out.println("[!] STATUS: ATENDIMENTO CRÍTICO");
+            System.out.println("PACIENTE EM RISCO: " + risco);
+            System.out.println("DESTINO:  ALA EMERGENCIAL (Transferência Imediata)");
+            System.out.println("OBSERVAÇÃO:  Monitoramento contínuo obrigatório.");
         } else {
-            System.out.println("ENCAMINHAMENTO AMBULATORIAL");
-            System.out.println("Risco do paciente: " + risco);
-            System.out.println("Ação: Paciente avaliado no consultório. Receituário emitido e paciente liberado.");
+            System.out.println("[ ok ] STATUS: ATENDIMENTO AMBULATORIAL");
+            System.out.println("PACIENTE EM RISCO: " + risco);
+            System.out.println("DESTINO:  LIBERADO / CONSULTÓRIO");
         }
-        System.out.print("----------------------");
+        System.out.println("────────────────────────────────────────────");
     }
 
 }
