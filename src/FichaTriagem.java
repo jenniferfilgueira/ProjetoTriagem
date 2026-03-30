@@ -5,7 +5,6 @@ public class FichaTriagem {
     private Paciente paciente;
     private Enfermeiro enfermeiro;
     private GrauRisco riscoReal;
-    private Medico medico;
 
     private List<Sintoma> sintomas;
 

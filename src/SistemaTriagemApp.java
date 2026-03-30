@@ -1,10 +1,13 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 public class SistemaTriagemApp {
 
     Scanner scanner = new Scanner(System.in);
     private List<FichaTriagem> filaAtendimento;
+    private Enfermeiro enfermeiroLogado;
+    private Paciente pacienteAtual;
+    private Medico medicoAtual;
 
     public void iniciar() {
         this.filaAtendimento = new ArrayList<>();
@@ -18,18 +21,31 @@ public class SistemaTriagemApp {
 
             switch (opcao) {
                 case 1:
-                    cadastrarEnfermeiro();
+                    this.enfermeiroLogado = cadastrarEnfermeiro();
+                    System.out.println("Enfermeiro " + enfermeiroLogado.getNome() + " pronto para trabalhar!");
                     break;
                 case 2:
-                    cadastrarMedico();
+                    this.medicoAtual = cadastrarMedico();
+                    System.out.println("Médico(a) " + medicoAtual.getNome() + " está de plantão.");
                     break;
+
                 case 3:
-                    cadastrarPaciente();
+                    this.pacienteAtual = cadastrarPaciente();
+                    System.out.println("Paciente " + pacienteAtual.getNome() + " aguardando triagem.");
                     break;
+
                 case 4:
-                    Enfermeiro e = cadastrarEnfermeiro();
-                    Paciente p = cadastrarPaciente();
-                    realizarNovaTriagem(e, p);
+                    if (enfermeiroLogado == null) {
+                        System.out.println("ERRO: Cadastre um Enfermeiro primeiro (Opção 1)!");
+                    } else if (pacienteAtual == null) {
+                        System.out.println("ERRO: Cadastre um Paciente primeiro (Opção 3)!");
+                    } else {
+                        realizarNovaTriagem(enfermeiroLogado, pacienteAtual);
+                        this.pacienteAtual = null; 
+                    }
+                    break;
+                case 5:
+                    realizarAtendimentoMedico();
                     break;
                 case 0:
                     System.out.println("Saindo...");
@@ -46,6 +62,7 @@ public class SistemaTriagemApp {
         System.out.println("2 - Cadastrar Médico");
         System.out.println("3 - Cadastrar Paciente");
         System.out.println("4 - Realizar Triagem");
+        System.out.println("5 - Atendimento Médico");
         System.out.println("0 - Sair");
         System.out.println("===========================================\n");
     }
@@ -132,7 +149,7 @@ public class SistemaTriagemApp {
             System.out.print("Deseja adicionar outro sintoma? (SIM/NAO): ");
             continuar = scanner.nextLine();
         }
-
+        
         ficha.processarTriagem();
 
         System.out.println("-----------------------------------------");
@@ -144,5 +161,14 @@ public class SistemaTriagemApp {
         System.out.println("\nTriagem concluída! Paciente enviado para a fila.");
 
     }
+    public void realizarAtendimentoMedico() {
+        if (filaAtendimento.isEmpty()) {
+            System.out.println("Fila vazia!");
+            return;
+        }
 
+        FichaTriagem ficha = filaAtendimento.remove(0);
+        this.medicoAtual.avaliarFicha(ficha);
+        this.medicoAtual.encaminharPaciente(ficha);
+    }
 }
