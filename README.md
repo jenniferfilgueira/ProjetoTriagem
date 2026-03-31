@@ -43,7 +43,7 @@ Com isso, o sistema contribui para uma melhor organização do atendimento, maio
 ---
 
 ## Autores
-- ANNA KAROLLINY
+- ANNA KAROLINY
 - JEFTE
 - JENNIFER FILGUEIRA
 
