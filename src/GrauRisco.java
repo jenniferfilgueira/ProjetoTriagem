@@ -13,10 +13,6 @@ public enum GrauRisco {
         this.prioridade = prioridade;
     }
 
-    public void definirPrioridade() {
-
-    }
-
     public int getPrioridade() {
         return prioridade;
     }
